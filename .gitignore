@@ -1,0 +1,10 @@
+*.a
+*.sublime-*
+build/
+.tags*
+*.png
+model/
+.result
+.so
+.vscode
+__pycache__/
