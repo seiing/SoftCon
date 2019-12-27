@@ -101,7 +101,7 @@ make -j8
 
 #### Render with trained network
 ```
-./render/render ../network/(network_name)
+./render/render (network_name)
 ```
 
 #### Training
@@ -109,3 +109,7 @@ make -j8
 cd SoftCon/learn
 mpirun -np 8 python3 -m run --type=train
 ```
+
+## Contact us
+- For bug reports/requests/suggestions, use github issues. 
+- For private inquiries, feel free to contact us at: sehee@mrl.snu.ac.kr
