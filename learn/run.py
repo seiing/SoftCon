@@ -65,9 +65,10 @@ class Environment():
         self.reward_keys = list(reward_dict.keys())
         print('Reward Type: ',self.reward_keys)
 
-    def loadNN(self,path):
-        self.network_name = path
-        load_dir = '../../model/%s'%self.network_name
+    def loadNN(self,name):
+        self.network_name = name
+        file_path = os.path.dirname(os.getcwd())+"/result/"
+        load_dir = file_path+self.network_name
         self.pi = self.train(num_timesteps=1,seed=self.seed,model_path=load_dir,argtype='play')
 
     def get_action(self,state):
@@ -162,11 +163,11 @@ def main():
         env = Environment()
         env.network_name = args.model
 
-        load_dir = '../model/%s'%env.network_name
+        file_path = os.path.dirname(os.getcwd())+"/result/"
+        load_dir = file_path+env.network_name
         print(env.network_name)
         _,_,_,iteration = env.network_name.split("_",4)
         pi = env.train(num_timesteps=env.num_timesteps,seed=env.seed,model_path=load_dir,model_iter=int(iteration),argtype=args.type)
-
 
     if args.type == "play":
         print('NETWORK PLAY!')
@@ -174,7 +175,10 @@ def main():
         env = Environment()
         env.network_name = args.model
 
-        load_dir = '../model/%s'%env.network_name
+        file_path = os.path.dirname(os.getcwd())+"/result/"
+        if not os.path.isdir(file_path):
+            os.mkdir(file_path)
+        load_dir = filepath+env.network_name
         pi = env.train(num_timesteps=1,seed=env.seed,model_path=load_dir,argtype=args.type)
         env.reset(True)
         obs = env.simulator.GetStates(env.movement_mode)

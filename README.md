@@ -107,5 +107,5 @@ make -j8
 #### Training
 ```
 cd SoftCon/learn
-mpirun -np 8 python -m run -type=train
+mpirun -np 8 python3 -m run --type=train
 ```

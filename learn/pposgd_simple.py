@@ -49,7 +49,10 @@ class Plot(object):
         ax2.legend(loc=2)
         plt.show()
         plt.pause(0.001)
-        plt.savefig(os.path.dirname(os.getcwd())+'/graph/graph'+self.name+'.png')
+        file_path = os.path.dirname(os.getcwd())+"/result/"
+        if not os.path.isdir(file_path):
+            os.mkdir(file_path)
+        plt.savefig(file_path+"reward_"+self.name+".png")
 
 def traj_segment_generator(pi, env, horizon, stochastic):
     t = 0
@@ -303,7 +306,7 @@ def learn(env, policy_fn, *,
         if MPI.COMM_WORLD.Get_rank()==0:
             logger.dump_tabular()
             if(iters_so_far % 10 == 0):
-                U.save_state(os.path.dirname(os.getcwd())+'/model/train_%s_%s'%(timechecker.str_datetime(),iters_so_far))
+                U.save_state(os.path.dirname(os.getcwd())+'/result/train_%s_%s'%(timechecker.str_datetime(),iters_so_far))
             plot.add(iters_so_far,reweachbuffer,np.mean(rewbuffer))
             plot.draw()
 

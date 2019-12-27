@@ -12,13 +12,15 @@ SimulationWindow::
 SimulationWindow()
 	:GLWindow(),mCurFrame(0),mTotalFrame(0),mElapsedTime(0.0),mPlay(false),mIsNNLoaded(false)
 {
-	std::cout << "Simulation Window." << std::endl;
-
 	mDisplayTimeout = 33;
 
 	initLights();
 
 	mEnvironment = new Environment();
+
+	mActions.resize(mEnvironment->GetActions().size());
+	mActions.setZero();
+	
 	try {
 		mm = p::import("__main__");
 		mns = mm.attr("__dict__");
