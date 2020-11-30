@@ -16,8 +16,9 @@ ACM Trans. Graph. 38, 6, 208. (SIGGRAPH Asia 2019)
 
 Project page : [http://mrl.snu.ac.kr/publications/ProjectSoftCon/SoftCon.html](http://mrl.snu.ac.kr/publications/ProjectSoftCon/SoftCon.html)  
 Paper : [http://mrl.snu.ac.kr/publications/ProjectSoftCon/SoftCon.pdf](http://mrl.snu.ac.kr/publications/ProjectSoftCon/SoftCon.pdf)  
-Youtube : [https://www.youtube.com/watch?v=I2ylkhPSkT4](https://www.youtube.com/watch?v=I2ylkhPSkT4) 
-Blog : [http://mrl.snu.ac.kr/blog/ProjectSoftCon](http://mrl.snu.ac.kr/blog/ProjectSoftCon)
+Youtube : [https://www.youtube.com/watch?v=I2ylkhPSkT4](https://www.youtube.com/watch?v=I2ylkhPSkT4)  
+Blog : [http://mrl.snu.ac.kr/blog/ProjectSoftCon](http://mrl.snu.ac.kr/blog/ProjectSoftCon)  
+
 
 ## How to install
 
